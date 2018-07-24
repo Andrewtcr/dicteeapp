@@ -7,16 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		086AFA622106F2EB0015B8F2 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086AFA612106F2EB0015B8F2 /* SplashScreenViewController.swift */; };
+		086AFA642106F3420015B8F2 /* applogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 086AFA632106F3420015B8F2 /* applogo.png */; };
 		4989EC23210599D40064821A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989EC22210599D40064821A /* AppDelegate.swift */; };
 		4989EC25210599D40064821A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989EC24210599D40064821A /* ViewController.swift */; };
 		4989EC28210599D40064821A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4989EC26210599D40064821A /* Main.storyboard */; };
 		4989EC2A210599D50064821A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4989EC29210599D50064821A /* Assets.xcassets */; };
 		4989EC2D210599D50064821A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4989EC2B210599D50064821A /* LaunchScreen.storyboard */; };
 		4989EC352105A1510064821A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989EC342105A1510064821A /* Question.swift */; };
-		4989EC372106EAC50064821A /* Dictée.png in Resources */ = {isa = PBXBuildFile; fileRef = 4989EC362106EAC50064821A /* Dictée.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		086AFA612106F2EB0015B8F2 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		086AFA632106F3420015B8F2 /* applogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = applogo.png; path = ../../Desktop/applogo.png; sourceTree = SOURCE_ROOT; };
 		4989EC1F210599D40064821A /* dicteeapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dicteeapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4989EC22210599D40064821A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4989EC24210599D40064821A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,7 +28,6 @@
 		4989EC2C210599D50064821A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4989EC2E210599D60064821A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4989EC342105A1510064821A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		4989EC362106EAC50064821A /* Dictée.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Dictée.png"; path = "../../../Downloads/Dictée.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +60,15 @@
 		4989EC21210599D40064821A /* dicteeapp */ = {
 			isa = PBXGroup;
 			children = (
+				086AFA632106F3420015B8F2 /* applogo.png */,
 				4989EC22210599D40064821A /* AppDelegate.swift */,
 				4989EC24210599D40064821A /* ViewController.swift */,
 				4989EC26210599D40064821A /* Main.storyboard */,
 				4989EC29210599D50064821A /* Assets.xcassets */,
-				4989EC362106EAC50064821A /* Dictée.png */,
 				4989EC2B210599D50064821A /* LaunchScreen.storyboard */,
 				4989EC2E210599D60064821A /* Info.plist */,
 				4989EC342105A1510064821A /* Question.swift */,
+				086AFA612106F2EB0015B8F2 /* SplashScreenViewController.swift */,
 			);
 			path = dicteeapp;
 			sourceTree = "<group>";
@@ -129,7 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4989EC2D210599D50064821A /* LaunchScreen.storyboard in Resources */,
-				4989EC372106EAC50064821A /* Dictée.png in Resources */,
+				086AFA642106F3420015B8F2 /* applogo.png in Resources */,
 				4989EC2A210599D50064821A /* Assets.xcassets in Resources */,
 				4989EC28210599D40064821A /* Main.storyboard in Resources */,
 			);
@@ -144,6 +147,7 @@
 			files = (
 				4989EC352105A1510064821A /* Question.swift in Sources */,
 				4989EC25210599D40064821A /* ViewController.swift in Sources */,
+				086AFA622106F2EB0015B8F2 /* SplashScreenViewController.swift in Sources */,
 				4989EC23210599D40064821A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
