@@ -14,7 +14,6 @@ import FirebaseStorage
 class RecordUIViewControl: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
 
     @IBOutlet weak var answerTextView: UITextField!
-    @IBOutlet weak var titleTextView: UITextField!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
     
@@ -28,14 +27,14 @@ class RecordUIViewControl: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         recordingSession = AVAudioSession.sharedInstance()
         ref = Database.database().reference()
         let storageRef = storage.reference()
 
         do {
-            try recordingSession.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.spokenAudio, options: [])
+            try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord, mode: AVAudioSessionModeSpokenAudio, options: [])
             try recordingSession.setActive(true)
             recordingSession.requestRecordPermission() { [unowned self] allowed in
                 DispatchQueue.main.async {
@@ -182,9 +181,10 @@ class RecordUIViewControl: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
                     return
                 }
                 print(downloadURL.absoluteString)
-                self.ref.child("myfirstios/test-id/title").setValue(self.titleTextView.text)
-                self.ref.child("myfirstios/test-id/answer").setValue(self.answerTextView.text)
-                self.ref.child("myfirstios/test-id/url").setValue(downloadURL.absoluteString)
+                var title = self.title!
+                self.ref.child("myfirstios/" + title + "/title").setValue(NSDate().timeIntervalSince1970)
+                self.ref.child("myfirstios/" + title + "/answer").setValue(self.answerTextView.text)
+                self.ref.child("myfirstios/" + title + "/url").setValue(downloadURL.absoluteString)
             }
         }
         

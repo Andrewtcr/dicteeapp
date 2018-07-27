@@ -11,6 +11,7 @@
 		086AFA642106F3420015B8F2 /* applogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 086AFA632106F3420015B8F2 /* applogo.png */; };
 		08D2310A210A9F2B000F5D67 /* RecordUIViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D23109210A9F2B000F5D67 /* RecordUIViewControl.swift */; };
 		08D23114210AA006000F5D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08D23113210AA005000F5D67 /* GoogleService-Info.plist */; };
+		08D23116210AA757000F5D67 /* TitleInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D23115210AA757000F5D67 /* TitleInputViewController.swift */; };
 		3EBAE1EDEDFDCDE7A4BCCBCC /* Pods_dicteeapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379DB5D12B31C15F1FD3DCE3 /* Pods_dicteeapp.framework */; };
 		4989EC23210599D40064821A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989EC22210599D40064821A /* AppDelegate.swift */; };
 		4989EC25210599D40064821A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989EC24210599D40064821A /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 		086AFA632106F3420015B8F2 /* applogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = applogo.png; path = ../../Desktop/applogo.png; sourceTree = SOURCE_ROOT; };
 		08D23109210A9F2B000F5D67 /* RecordUIViewControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordUIViewControl.swift; sourceTree = "<group>"; };
 		08D23113210AA005000F5D67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		08D23115210AA757000F5D67 /* TitleInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleInputViewController.swift; sourceTree = "<group>"; };
 		106A7BA011185DC4602A07C4 /* Pods-dicteeapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dicteeapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dicteeapp/Pods-dicteeapp.debug.xcconfig"; sourceTree = "<group>"; };
 		379DB5D12B31C15F1FD3DCE3 /* Pods_dicteeapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dicteeapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4989EC1F210599D40064821A /* dicteeapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dicteeapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,7 @@
 				4989EC2E210599D60064821A /* Info.plist */,
 				4989EC342105A1510064821A /* Question.swift */,
 				086AFA612106F2EB0015B8F2 /* SplashScreenViewController.swift */,
+				08D23115210AA757000F5D67 /* TitleInputViewController.swift */,
 			);
 			path = dicteeapp;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				4989EC25210599D40064821A /* ViewController.swift in Sources */,
 				086AFA622106F2EB0015B8F2 /* SplashScreenViewController.swift in Sources */,
 				08D2310A210A9F2B000F5D67 /* RecordUIViewControl.swift in Sources */,
+				08D23116210AA757000F5D67 /* TitleInputViewController.swift in Sources */,
 				4989EC23210599D40064821A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
