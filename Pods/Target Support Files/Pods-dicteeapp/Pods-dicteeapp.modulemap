@@ -1,0 +1,6 @@
+framework module Pods_dicteeapp {
+  umbrella header "Pods-dicteeapp-umbrella.h"
+
+  export *
+  module * { export * }
+}
