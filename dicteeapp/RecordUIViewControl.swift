@@ -13,12 +13,14 @@ import FirebaseStorage
 
 class RecordUIViewControl: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDelegate {
 
+    @IBOutlet weak var numTextView: UILabel!
     @IBOutlet weak var answerTextView: UITextField!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
     
     let storage = Storage.storage()
     var ref: DatabaseReference!
+    var index: Int = 1
 
     
     var soundRecorder : AVAudioRecorder!
@@ -36,7 +38,7 @@ class RecordUIViewControl: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
         do {
             try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord, mode: AVAudioSessionModeSpokenAudio, options: [])
             try recordingSession.setActive(true)
-            recordingSession.requestRecordPermission() { [unowned self] allowed in
+                recordingSession.requestRecordPermission() { [unowned self] allowed in
                 DispatchQueue.main.async {
                     if allowed {
                         //
@@ -49,7 +51,7 @@ class RecordUIViewControl: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
         } catch {
             // failed to record!
         }
-        setupRecorder()
+        //setupRecorder()
     }
     
     @IBAction func onPlayClicked(_ sender: UIButton) {
@@ -67,7 +69,8 @@ class RecordUIViewControl: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
     
     @IBAction func onRecordClicked(_ sender: UIButton) {
         if sender.titleLabel?.text == "Record"{
-            soundRecorder.record()
+            setupRecorder()
+            //soundRecorder.record()
             sender.setTitle("Stop", for: UIControl.State.normal)
             playButton.isEnabled = false
         }
@@ -165,7 +168,7 @@ class RecordUIViewControl: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
         let localFile = getDocumentsDirectory().appendingPathComponent("recording.m4a")
         
         // Create a reference to the file you want to upload
-        let riversRef = storageRef.child("tests-audio/recording.m4a")
+        let riversRef = storageRef.child("tests-audio/recording" + UUID().uuidString + ".m4a")
         
         // Upload the file to the path "images/rivers.jpg"
         let uploadTask = riversRef.putFile(from: localFile, metadata: nil)
@@ -182,14 +185,19 @@ class RecordUIViewControl: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
                 }
                 print(downloadURL.absoluteString)
                 var title = self.title!
-                self.ref.child("myfirstios/" + title + "/title").setValue(NSDate().timeIntervalSince1970)
-                self.ref.child("myfirstios/" + title + "/answer").setValue(self.answerTextView.text)
-                self.ref.child("myfirstios/" + title + "/url").setValue(downloadURL.absoluteString)
+                self.ref.child("myfirstios/" + title + "/" + String(self.index) + "/title").setValue(NSDate().timeIntervalSince1970)
+                self.ref.child("myfirstios/" + title + "/" + String(self.index) + "/answer").setValue(self.answerTextView.text)
+                self.ref.child("myfirstios/" + title + "/" + String(self.index) + "/url").setValue(downloadURL.absoluteString)
+                self.index += 1
+                self.numTextView.text = "Question " + String(self.index)
+                // resetup all text
+                self.answerTextView.text = ""
             }
         }
         
         
     }
+    
     
     /*
     // MARK: - Navigation

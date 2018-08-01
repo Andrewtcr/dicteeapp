@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0834AEA921103A5800C66E77 /* TestSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0834AEA821103A5800C66E77 /* TestSelectionViewController.swift */; };
+		084DA60D21117BDA00D5DBDC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084DA60C21117BDA00D5DBDC /* ResultViewController.swift */; };
+		084DA60F21120C7700D5DBDC /* PassCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084DA60E21120C7700D5DBDC /* PassCodeViewController.swift */; };
 		086AFA622106F2EB0015B8F2 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086AFA612106F2EB0015B8F2 /* SplashScreenViewController.swift */; };
 		08D2310A210A9F2B000F5D67 /* RecordUIViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D23109210A9F2B000F5D67 /* RecordUIViewControl.swift */; };
 		08D23114210AA006000F5D67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08D23113210AA005000F5D67 /* GoogleService-Info.plist */; };
@@ -18,12 +21,12 @@
 		4989EC2A210599D50064821A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4989EC29210599D50064821A /* Assets.xcassets */; };
 		4989EC2D210599D50064821A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4989EC2B210599D50064821A /* LaunchScreen.storyboard */; };
 		4989EC352105A1510064821A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989EC342105A1510064821A /* Question.swift */; };
-		498CA6EF2110360E00201692 /* Blue bubble.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 498CA6EE2110360D00201692 /* Blue bubble.jpg */; };
-		498CA6F1211039A400201692 /* Red Bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 498CA6F0211039A400201692 /* Red Bubble.png */; };
-		49A9159F210AF90D00BE229F /* applogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A9159E210AF90D00BE229F /* applogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0834AEA821103A5800C66E77 /* TestSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSelectionViewController.swift; sourceTree = "<group>"; };
+		084DA60C21117BDA00D5DBDC /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		084DA60E21120C7700D5DBDC /* PassCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassCodeViewController.swift; sourceTree = "<group>"; };
 		086AFA612106F2EB0015B8F2 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		08D23109210A9F2B000F5D67 /* RecordUIViewControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordUIViewControl.swift; sourceTree = "<group>"; };
 		08D23113210AA005000F5D67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -38,9 +41,6 @@
 		4989EC2C210599D50064821A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4989EC2E210599D60064821A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4989EC342105A1510064821A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		498CA6EE2110360D00201692 /* Blue bubble.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Blue bubble.jpg"; path = "../../../Downloads/Blue bubble.jpg"; sourceTree = "<group>"; };
-		498CA6F0211039A400201692 /* Red Bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Red Bubble.png"; path = "../../../Downloads/Red Bubble.png"; sourceTree = "<group>"; };
-		49A9159E210AF90D00BE229F /* applogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = applogo.png; path = ../../../Downloads/applogo.png; sourceTree = "<group>"; };
 		5B59DD7541B6C1602A9D5F6A /* Pods-dicteeapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dicteeapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-dicteeapp/Pods-dicteeapp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,9 +79,6 @@
 			children = (
 				08D23113210AA005000F5D67 /* GoogleService-Info.plist */,
 				08D23109210A9F2B000F5D67 /* RecordUIViewControl.swift */,
-				49A9159E210AF90D00BE229F /* applogo.png */,
-				498CA6EE2110360D00201692 /* Blue bubble.jpg */,
-				498CA6F0211039A400201692 /* Red Bubble.png */,
 				4989EC22210599D40064821A /* AppDelegate.swift */,
 				4989EC24210599D40064821A /* ViewController.swift */,
 				4989EC26210599D40064821A /* Main.storyboard */,
@@ -91,6 +88,9 @@
 				4989EC342105A1510064821A /* Question.swift */,
 				086AFA612106F2EB0015B8F2 /* SplashScreenViewController.swift */,
 				08D23115210AA757000F5D67 /* TitleInputViewController.swift */,
+				0834AEA821103A5800C66E77 /* TestSelectionViewController.swift */,
+				084DA60C21117BDA00D5DBDC /* ResultViewController.swift */,
+				084DA60E21120C7700D5DBDC /* PassCodeViewController.swift */,
 			);
 			path = dicteeapp;
 			sourceTree = "<group>";
@@ -172,13 +172,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				498CA6EF2110360E00201692 /* Blue bubble.jpg in Resources */,
-				49A9159F210AF90D00BE229F /* applogo.png in Resources */,
 				4989EC2D210599D50064821A /* LaunchScreen.storyboard in Resources */,
 				08D23114210AA006000F5D67 /* GoogleService-Info.plist in Resources */,
 				4989EC2A210599D50064821A /* Assets.xcassets in Resources */,
 				4989EC28210599D40064821A /* Main.storyboard in Resources */,
-				498CA6F1211039A400201692 /* Red Bubble.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,11 +231,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0834AEA921103A5800C66E77 /* TestSelectionViewController.swift in Sources */,
 				4989EC352105A1510064821A /* Question.swift in Sources */,
 				4989EC25210599D40064821A /* ViewController.swift in Sources */,
+				084DA60D21117BDA00D5DBDC /* ResultViewController.swift in Sources */,
 				086AFA622106F2EB0015B8F2 /* SplashScreenViewController.swift in Sources */,
 				08D2310A210A9F2B000F5D67 /* RecordUIViewControl.swift in Sources */,
 				08D23116210AA757000F5D67 /* TitleInputViewController.swift in Sources */,
+				084DA60F21120C7700D5DBDC /* PassCodeViewController.swift in Sources */,
 				4989EC23210599D40064821A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

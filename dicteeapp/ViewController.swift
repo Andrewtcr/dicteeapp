@@ -9,17 +9,21 @@
 import UIKit
 import AVKit
 import AVFoundation
+import FirebaseDatabase
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var questionTitle: UILabel!
+    @IBOutlet weak var answerLabel: UILabel!
     
     var counter : Int = 0
     var questionIndex : Int = -1
     var questions : [Question] = []
     var player = AVPlayer()
-
+    var ref: DatabaseReference!
+    var totalCorrect: Int = 0
+    var totalIncorrect: Int = 0
+    
     let letters = CharacterSet.letters
     let digits = CharacterSet.decimalDigits
 
@@ -28,26 +32,60 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var qqq = Question(t:"Question ", url:"url", a:"answer", p:5)
+        
         // Do any additional setup after loading the view, typically from a nib.
-        let q1 = Question()
-        q1.title = "Test 1"
-        q1.audioURL = "https://firebasestorage.googleapis.com/v0/b/realreviews-a5de6.appspot.com/o/tests-audio%2Frecording.m4a?alt=media&token=fb6e1321-2bb1-4790-9ac4-55e202c66de0"
-        q1.points = 10
-        q1.answer = "I am always very busy in the morning"
-        
-        let q2 = Question(t:"Test 2", url:"https://s3-us-west-1.amazonaws.com/frenchapp/test1.mp3", a:"I am more confident now", p:5)
-        questions = [q1, q2]
-        
-        nextQuestion()
+        ref = Database.database().reference()
+        ref.child("myfirstios/" + self.title!).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            var i = 1
+            for s in snapshot.children.allObjects as! [DataSnapshot] {
+                print (s.value)
+                let dic = s.value as? NSDictionary
+                print ("before ")
+                print (dic)
+                print ("after")
+                var question = Question(t:"Question " + String(i), url:dic!["url"] as! String, a:dic!["answer"] as! String, p:5)
+                print(question)
+                self.questions.append(question)
+                i += 1
+            }
+            self.nextQuestion()
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
 
     func nextQuestion() {
-        if (questionIndex < questions.count) {
+        if (questionIndex < questions.count - 1) {
             questionIndex += 1
             questionTitle.text = questions[questionIndex].title
-            questionAnswerTextView.text = questions[questionIndex].answer
+            //print (questions[questionIndex])
+            //print (questions[questionIndex].answer)
+            //questionAnswerTextView.text = questions[questionIndex].answer
+        } else {
+            performSegue(withIdentifier: "showResult", sender: self)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showResult" {
+            // Setup new view controller
+            let vc = segue.destination as? ResultViewController
+            vc?.totalCorrect = self.totalCorrect
+            vc?.totalIncorrect = self.totalIncorrect
+            print(vc?.totalCorrect)
+        }
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showTest" {
+//            // Setup new view controller
+//            let vc = segue.destination as? ViewController
+//            vc?.title = self.data[selectedIndex]
+//        }
+//    }
     
     @IBAction func onSubmitClicked(_ sender: Any) {
         var yourAnswer = extractLetters(str:(answerField.text?.lowercased())!)
@@ -58,10 +96,14 @@ class ViewController: UIViewController {
         
         if (compareAnswers(a1: yourAnswer, a2:correctAnswer)) {
             answerLabel.text = "Correct!"
+            totalCorrect += 1
         } else {
             answerLabel.text = "Incorrect!"
+            totalIncorrect += 1
         }
         
+        //sleep(2)
+        //nextQuestion()
     }
     
     @IBAction func onNextClicked(_ sender: UIButton) {
