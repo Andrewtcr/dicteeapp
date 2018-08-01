@@ -25,7 +25,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="applogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="XMu-DL-HyK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="applogo" translatesAutoresizingMaskIntoConstraints="NO" id="XMu-DL-HyK">
                                 <rect key="frame" x="57" y="165" width="260" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -436,10 +436,9 @@
     <resources>
         <image name="Blue bubble.jpg" width="297" height="298"/>
         <image name="Red Bubble.png" width="600" height="600"/>
-        <image name="applogo.png" width="225" height="225"/>
+        <image name="applogo" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xLN-fB-RCJ"/>
-        <segue reference="1m7-8L-YOe"/>
+        <segue reference="wEi-Ee-dlZ"/>
     </inferredMetricsTieBreakers>
 </document>
