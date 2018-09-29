@@ -57,13 +57,13 @@ class RecordUIViewControl: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
     @IBAction func onPlayClicked(_ sender: UIButton) {
         if sender.titleLabel?.text == "Play" {
             recordButton.isEnabled = false
-            sender.setTitle("Stop", for: UIControl.State.normal)
+            sender.setTitle("Stop", for: UIControlState.normal)
             preparePlayer()
             SoundPlayer.play()
         }
         else {
             SoundPlayer.stop()
-            sender.setTitle("Play", for: UIControl.State.normal)
+            sender.setTitle("Play", for: UIControlState.normal)
         }
     }
     
@@ -71,12 +71,12 @@ class RecordUIViewControl: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
         if sender.titleLabel?.text == "Record"{
             setupRecorder()
             //soundRecorder.record()
-            sender.setTitle("Stop", for: UIControl.State.normal)
+            sender.setTitle("Stop", for: UIControlState.normal)
             playButton.isEnabled = false
         }
         else {
             soundRecorder.stop()
-            sender.setTitle("Record", for: UIControl.State.normal)
+            sender.setTitle("Record", for: UIControlState.normal)
             playButton.isEnabled = true
         }
     }
@@ -145,7 +145,7 @@ class RecordUIViewControl: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         recordButton.isEnabled = true
-        playButton.setTitle("Play", for:UIControl.State.normal)
+        playButton.setTitle("Play", for:UIControlState.normal)
     }
     
     
